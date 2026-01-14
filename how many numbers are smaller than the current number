@@ -1,0 +1,21 @@
+# Intuition
+
+# need to run nested loops to check against each other
+# Approach
+
+# ->Defining a result array
+# ->looping the nums array
+# ->creating a nested loop for checking against one value
+# ->increase count by 1 whenever an element less than is caught.
+# ->append to the array and return
+
+class Solution:
+    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+        result = []
+        for i in range(len(nums)):
+            count = 0
+            for j in range(0,len(nums)):
+                if nums[j] < nums[i]:
+                    count = count + 1
+            result.append(count)
+        return result
